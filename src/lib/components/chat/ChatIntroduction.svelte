@@ -39,12 +39,12 @@
 			</div>
 			<p class="text-base text-gray-600 dark:text-gray-400">
 				{envPublic.PUBLIC_APP_DESCRIPTION ||
-					"Making the community's best AI chat models available to everyone."}
+					"Super AI is a multi-AI platform where top AI platforms work together to make sure your tasks are done right every time."}
 			</p>
 		</div>
 	</div>
 	<div class="lg:col-span-2 lg:pl-24">
-		{#each announcementBanners as banner}
+		<!-- {#each announcementBanners as banner}
 			<AnnouncementBanner classNames="mb-4" title={banner.title}>
 				<a
 					target="_blank"
@@ -52,7 +52,7 @@
 					class="mr-2 flex items-center underline hover:no-underline">{banner.linkTitle}</a
 				>
 			</AnnouncementBanner>
-		{/each}
+		{/each} -->
 		<div class="overflow-hidden rounded-xl border dark:border-gray-800">
 			<div class="flex p-3">
 				<div>
@@ -79,7 +79,7 @@
 			<ModelCardMetadata variant="dark" model={currentModel} />
 		</div>
 	</div>
-	{#if currentModelMetadata.promptExamples}
+	<!-- {#if currentModelMetadata.promptExamples}
 		<div class="lg:col-span-3 lg:mt-6">
 			<p class="mb-3 text-gray-600 dark:text-gray-300">Examples</p>
 			<div class="grid gap-3 lg:grid-cols-3 lg:gap-5">
@@ -94,5 +94,5 @@
 				{/each}
 			</div>
 		</div>{/if}
-	<div class="h-40 sm:h-24" />
+	<div class="h-40 sm:h-24" /> -->
 </div>
