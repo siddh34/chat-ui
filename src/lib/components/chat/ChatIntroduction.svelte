@@ -11,7 +11,7 @@
 	import { useSettingsStore } from "$lib/stores/settings";
 	import JSON5 from "json5";
 
-	// export let currentModel: Model;
+	export let currentModel: Model;
 	export let models: Model[];
 
 	const settings = useSettingsStore();
@@ -25,12 +25,12 @@
 	const dispatch = createEventDispatcher<{ message: string }>();
 </script>
 
-<div class="container mx-auto px-4">
-	<div class="lg:grid lg:grid-cols-3">
-		<div class="lg:col-span-1">
+<div class="my-auto grid gap-8 lg:grid-cols-3">
+	<div class="lg:grid-cols-3">
+		<div>
 			<div class="mb-3 flex items-center text-2xl font-semibold">
 				<Logo classNames="mr-1 flex-none" />
-				{envPublic.PUBLIC_APP_NAME}
+				<span class="gradient-text">{envPublic.PUBLIC_APP_NAME}</span>
 				<div
 					class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400 dark:border-gray-700/60 dark:bg-gray-800"
 				>
@@ -39,32 +39,12 @@
 			</div>
 			<p class="text-base text-gray-600 dark:text-gray-400">
 				{envPublic.PUBLIC_APP_DESCRIPTION ||
-					"Introducing a multi-AI platform where top AI platforms work together to make sure your tasks are done right every time."}
+					"Super AI is a multi-AI platform where top AI platforms work together to make sure your tasks are done right every time."}
 			</p>
 		</div>
 	</div>
-</div>
-
-<!-- <div class="my-auto grid gap-8 lg:grid-cols-3"> -->
-<!-- <div class="lg:grid-cols-3">
-	<div>
-		<div class="mb-3 flex items-center text-2xl font-semibold">
-			<Logo classNames="mr-1 flex-none" />
-			{envPublic.PUBLIC_APP_NAME}
-			<div
-				class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400 dark:border-gray-700/60 dark:bg-gray-800"
-			>
-				v{envPublic.PUBLIC_VERSION}
-			</div>
-		</div>
-		<p class="text-base text-gray-600 dark:text-gray-400">
-			{envPublic.PUBLIC_APP_DESCRIPTION ||
-				"Super AI is a multi-AI platform where top AI platforms work together to make sure your tasks are done right every time."}
-		</p>
-	</div>
-</div> -->
-<!-- <div class="lg:col-span-2 lg:pl-24"> -->
-<!-- {#each announcementBanners as banner}
+	<!-- <div class="lg:col-span-2 lg:pl-24">
+		{#each announcementBanners as banner}
 			<AnnouncementBanner classNames="mb-4" title={banner.title}>
 				<a
 					target="_blank"
@@ -72,8 +52,8 @@
 					class="mr-2 flex items-center underline hover:no-underline">{banner.linkTitle}</a
 				>
 			</AnnouncementBanner>
-		{/each} -->
-<!-- <div class="overflow-hidden rounded-xl border dark:border-gray-800">
+		{/each}
+		<div class="overflow-hidden rounded-xl border dark:border-gray-800">
 			<div class="flex p-3">
 				<div>
 					<div class="text-sm text-gray-600 dark:text-gray-400">Current Model</div>
@@ -97,9 +77,9 @@
 				>
 			</div>
 			<ModelCardMetadata variant="dark" model={currentModel} />
-		</div> -->
-<!-- </div> -->
-<!-- {#if currentModelMetadata.promptExamples}
+		</div>
+	</div> -->
+	{#if currentModelMetadata.promptExamples}
 		<div class="lg:col-span-3 lg:mt-6">
 			<p class="mb-3 text-gray-600 dark:text-gray-300">Examples</p>
 			<div class="grid gap-3 lg:grid-cols-3 lg:gap-5">
@@ -114,5 +94,34 @@
 				{/each}
 			</div>
 		</div>{/if}
-	<div class="h-40 sm:h-24" /> -->
-<!-- </div> -->
+	<div class="h-40 sm:h-24" />
+</div>
+
+<!-- <div class="container mx-auto px-4">
+	<div class="lg:grid lg:grid-cols-3">
+		<div class="lg:col-span-1">
+			<div class="mb-3 flex items-center text-2xl font-semibold">
+				<Logo classNames="mr-1 flex-none" />
+				<span class="gradient-text">{envPublic.PUBLIC_APP_NAME}</span>
+				<div
+					class="ml-3 flex h-6 items-center rounded-lg border border-gray-100 bg-gray-50 px-2 text-base text-gray-400 dark:border-gray-700/60 dark:bg-gray-800"
+				>
+					v{envPublic.PUBLIC_VERSION}
+				</div>
+			</div>
+			<p class="text-base text-gray-600 dark:text-gray-400">
+				{envPublic.PUBLIC_APP_DESCRIPTION ||
+					"Introducing a multi-AI platform where top AI platforms work together to make sure your tasks are done right every time."}
+			</p>
+		</div>
+	</div>
+</div> -->
+
+<style>
+	.gradient-text {
+		background: linear-gradient(90deg, #4facfe, #00f2ff); /* Adjust gradient colors as needed */
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+</style>

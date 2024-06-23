@@ -35,6 +35,7 @@
 	import UploadedFile from "./UploadedFile.svelte";
 	import { useSettingsStore } from "$lib/stores/settings";
 	import type { ToolFront } from "$lib/types/Tool";
+	import IntentSelector from "./IntentSelector.svelte";
 
 	export let messages: Message[] = [];
 	export let loading = false;
@@ -62,6 +63,13 @@
 		retry: { id: Message["id"]; content?: string };
 		continue: { id: Message["id"] };
 	}>();
+
+	let selectedIntent = "None"; // Default intent
+
+	function handleIntentSelect(event: { detail: { intent: string } }) {
+		selectedIntent = event.detail.intent;
+		console.log(selectedIntent);
+	}
 
 	const handleSubmit = () => {
 		if (loading) return;
@@ -272,6 +280,7 @@
 			scrollNode={chatContainer}
 		/>
 	</div>
+
 	<div
 		class="dark:via-gray-80 pointer-events-none absolute inset-x-0 bottom-0 z-0 mx-auto flex w-full max-w-3xl flex-col items-center justify-center bg-gradient-to-t from-white via-white/80 to-white/0 px-3.5 py-4 max-md:border-t max-md:bg-white sm:px-5 md:py-8 xl:max-w-4xl dark:border-gray-800 dark:from-gray-900 dark:to-gray-900/0 max-md:dark:bg-gray-900 [&>*]:pointer-events-auto"
 	>
@@ -289,9 +298,11 @@
 				{/each}
 			</div>
 		{/if}
-
 		<div class="w-full">
 			<div class="flex w-full pb-3">
+				<div class="intent-container">
+					<IntentSelector on:select={handleIntentSelect} />
+				</div>
 				{#if !assistant}
 					{#if currentModel.tools}
 						<ToolsMenu {loading} />
