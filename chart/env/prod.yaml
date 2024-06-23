@@ -326,7 +326,7 @@ envVars:
   PUBLIC_APP_NAME: "HuggingChat"
   PUBLIC_APP_ASSETS: "huggingchat"
   PUBLIC_APP_COLOR: "yellow"
-  PUBLIC_APP_DESCRIPTION: "Super AI is a multi-AI platform where top AI platforms work together to make sure your tasks are done right every time."
+  PUBLIC_APP_DESCRIPTION: "Multiple AI platforms work together to meet your needs perfectly every time"
   PUBLIC_APP_DISCLAIMER_MESSAGE: "Disclaimer: AI is an area of active research with known problems such as biased generation and misinformation. Do not use this application for high-stakes decisions or advice."
   PUBLIC_APP_DATA_SHARING: 0
   PUBLIC_APP_DISCLAIMER: 1
