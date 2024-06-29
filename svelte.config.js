@@ -1,5 +1,5 @@
-// import adapter from "@sveltejs/adapter-node";
-import adapter from "@sveltejs/adapter-vercel"; // Updated adapter import
+import adapter from "@sveltejs/adapter-node";
+// import adapter from "@sveltejs/adapter-vercel"; // Updated adapter import
 import { vitePreprocess } from "@sveltejs/kit/vite";
 import dotenv from "dotenv";
 
